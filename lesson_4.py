@@ -1,0 +1,17 @@
+from PIL import Image
+
+monro=Image.open('monro.jpg')
+red_monro,green_monro,blue_monro=monro.split()
+coordinates_1=(25,0,671,522)
+coordinates_2=(50,0,696,522)
+coordinates_3=(0,0,646,522)
+cr_red_monro_1=red_monro.crop(coordinates_1)
+cr_red_monro_2=red_monro.crop(coordinates_2)
+cr_green_monro_1=green_monro.crop(coordinates_1)
+cr_green_monro_2=green_monro.crop(coordinates_3)
+fnl_bleu_monro=blue_monro.crop(coordinates_1)
+fnl_red_monro=Image.blend(cr_red_monro_1, cr_red_monro_2, 0.3)
+fnl_green_monro=Image.blend(cr_green_monro_1, cr_green_monro_2, 0.3)
+fnl_monro=Image.merge('RGB', (fnl_red_monro,fnl_green_monro,fnl_bleu_monro))
+fnl_monro.thumbnail((80, 80))
+fnl_monro.save('fnl_monro.jpg')
