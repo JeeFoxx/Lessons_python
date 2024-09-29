@@ -1,5 +1,6 @@
 import file_operations, random
 from faker import Faker
+
 fake = Faker("ru_RU")
 alphabet = {
     'а': 'а͠', 'б': 'б̋', 'в': 'в͒͠',
@@ -26,7 +27,6 @@ alphabet = {
     'Э': 'Э͒͠', 'Ю': 'Ю̋͠', 'Я': 'Я̋',
     ' ': ' '
 }
-
 skills = ["Стремительный прыжок", "Электрический выстрел", "Ледяной удар",
           "Стремительный удар", "Кислотный взгляд","Тайный побег",
           "Ледяной выстрел","Огненный заряд"]
@@ -55,4 +55,4 @@ for save in range(10):
     "skill_2" : skills_sample[1],
     "skill_3" : skills_sample[2]
     }
-    file_operations.render_template("charsheet.svg",name, context)
+    file_operations.render_template("charsheet.svg",f'Cards/{name}', context)
