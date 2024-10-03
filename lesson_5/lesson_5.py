@@ -4,7 +4,7 @@ def generate_cards():
     from faker import Faker
 
 
-    os.makedirs("Cards")
+    os.makedirs("Cards", exist_ok=True)
     fake = Faker("ru_RU")
     alphabet = {
         'а': 'а͠', 'б': 'б̋', 'в': 'в͒͠',
