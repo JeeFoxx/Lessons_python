@@ -4,7 +4,7 @@ import os
 from faker import Faker
 
 
-alphabet = {
+ALPHABET = {
     'а': 'а͠',
     'б': 'б̋',
     'в': 'в͒͠',
@@ -92,7 +92,7 @@ def generate_cards():
     for skill in skills:
         runic_skill = ""
         for letter in skill:
-            runic_skill += alphabet.get(letter)
+            runic_skill += ALPHABET.get(letter)
         runic_skills.append(runic_skill)      
 
     for save in range(10):
