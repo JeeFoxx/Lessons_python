@@ -9,6 +9,7 @@ if answer < 12:
             print(letter,"- буква")
 else:
     print("Длинный")
+    
 
 
 
