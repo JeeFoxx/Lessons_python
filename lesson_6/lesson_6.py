@@ -13,12 +13,23 @@ def is_very_long(password):
         return False
     return True
 
+def has_letters(password):
+    for symbol in password:
+        if symbol.isalpha():
+            return True
+    return False
+
 if has_digit(input_pass) == True:
     score += 2
 else:
     score += 0
 
 if is_very_long(input_pass) == True:
+    score +=2
+else:
+    score +=0
+    
+if has_letters(input_pass) == True:
     score +=2
 else:
     score +=0
