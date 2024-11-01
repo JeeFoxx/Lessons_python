@@ -25,6 +25,12 @@ def has_upper_letters(password):
             return True
     return False
 
+def has_lower_letters(password):
+    for symbol in password:
+        if symbol.islower():
+            return True
+    return False
+
 if has_digit(input_pass) == True:
     score += 2
 else:
@@ -43,6 +49,11 @@ else:
 if has_upper_letters(input_pass) == True:
     score +=2
 else:
+    score +=0
+
+if has_lower_letters(input_pass) == True:
+    score +=2
+else: 
     score +=0
 
 print(f"Рейтинг пароля: {score}")

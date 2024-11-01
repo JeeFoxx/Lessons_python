@@ -12,10 +12,16 @@
 #     return True
 # print(is_very_long("kjgfhsgd"))
 
-def has_letters(password):
+# def has_letters(password):
+#     for symbol in password:
+#         if symbol.isalpha():
+#             return True
+#     return False
+
+# print(has_letters("h456"))
+
+def has_lower_letters(password):
     for symbol in password:
-        if symbol.isalpha():
+        if symbol.islower():
             return True
     return False
-
-print(has_letters("h456"))
