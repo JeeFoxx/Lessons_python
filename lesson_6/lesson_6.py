@@ -31,32 +31,22 @@ def has_lower_letters(password):
             return True
     return False
 
-if has_digit(input_pass) == True:
-    score += 2
-else:
-    score += 0
-
-if is_very_long(input_pass) == True:
-    score +=2
-else:
-    score +=0
+def calculate_rating(password):
+    score = 0   
+    if has_digit(password):
+        score += 2
+    if is_very_long(password):
+        score += 2
+    if has_letters(password):
+        score += 2
+    if has_upper_letters(password):
+        score += 2
+    if has_lower_letters(password):
+        score += 2
     
-if has_letters(input_pass) == True:
-    score +=2
-else:
-    score +=0
+    return score
 
-if has_upper_letters(input_pass) == True:
-    score +=2
-else:
-    score +=0
-
-if has_lower_letters(input_pass) == True:
-    score +=2
-else: 
-    score +=0
-
-print(f"Рейтинг пароля: {score}")
+print(f"Рейтинг пароля: {calculate_rating(input_pass)}")
 
 
 
