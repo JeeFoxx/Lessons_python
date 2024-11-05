@@ -1,4 +1,5 @@
 input_pass = input("Введите пароль: ")
+
 score = 0
 
 def has_digit(password):
@@ -31,6 +32,14 @@ def has_lower_letters(password):
             return True
     return False
 
+def has_symbols(password):
+    spec_symbol = ["%", "#"]
+    for symbol in password:
+        if symbol in spec_symbol:
+            return True
+    return False
+        
+
 def calculate_rating(password):
     score = 0   
     if has_digit(password):
@@ -42,6 +51,8 @@ def calculate_rating(password):
     if has_upper_letters(password):
         score += 2
     if has_lower_letters(password):
+        score += 2
+    if has_symbols(password):
         score += 2
     
     return score
